@@ -3,12 +3,23 @@ const express = require('express');
 const ServerConfig =require('./config/ServerConfig');
 const connectDB = require('./config/dbConfig');
 const User = require('./schema/userSchema');
+const userRouter = require('./routes/userRoute');
+const cartRouter = require('./routes/cartRoute');
 
 const app=express();
 
 app.use(express.json());
 app.use(express.text());
 app.use(express.urlencoded({ extended : true }));
+
+//Routing middleware
+app.use('/users', userRouter); 
+app.use('/carts', cartRouter);
+
+app.post('/ping', (req,res) =>{
+    console.log(req.body);
+    return res.json({mesaage: "Pong"});
+})
 
 app.listen(ServerConfig.PORT, async ()=>{
     await connectDB();
