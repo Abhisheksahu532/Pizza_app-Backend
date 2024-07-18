@@ -5,6 +5,7 @@ const connectDB = require('./config/dbConfig');
 const User = require('./schema/userSchema');
 const userRouter = require('./routes/userRoute');
 const cartRouter = require('./routes/cartRoute');
+const authRouter = require('./routes/authRoute');
 
 const app=express();
 
@@ -15,6 +16,7 @@ app.use(express.urlencoded({ extended : true }));
 //Routing middleware
 app.use('/users', userRouter); 
 app.use('/carts', cartRouter);
+app.use('/auth', authRouter);
 
 app.post('/ping', (req,res) =>{
     console.log(req.body);
