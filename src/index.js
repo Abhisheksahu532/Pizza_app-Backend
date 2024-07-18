@@ -32,7 +32,6 @@ app.listen(ServerConfig.PORT, async ()=>{
     //     mobileNumber: "1231231230",
     //     password : "123456"
     // });
-
     // console.log("Created a new User");
     // console.log(newUser);
 });
