@@ -1,6 +1,5 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
-
 const ServerConfig =require('./config/ServerConfig');
 const connectDB = require('./config/dbConfig');
 const User = require('./schema/userSchema');
