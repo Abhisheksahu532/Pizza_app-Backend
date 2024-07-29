@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 
 const productSchema = new mongoose.Schema({
-    productname : {
+    productName : {
         type : String,
         required : [true, "Product name is required"],
         minlength: [10, "Product name should be at least 10 characters"],
@@ -28,7 +28,6 @@ const productSchema = new mongoose.Schema({
     inStock: {
         type: Boolean,
         required: [true, "In stock is required"],
-
         default: true
     }
 },{
@@ -38,6 +37,4 @@ const productSchema = new mongoose.Schema({
 
 const Product = mongoose.model("Product", productSchema); //collection
 
-module.exports ={
-    Product
-}
+module.exports = Product;
