@@ -10,7 +10,8 @@ const storageConfiguration = multer.diskStorage({
         // next(null, Date.now() + file.originalname);
         const extension = path.extname(file.originalname); // Get the file extension
         const baseName = path.basename(file.originalname, extension); // Get the base name without extension
-        next(null, `${Date.now()}(${baseName})${extension}`);         console.log(file)
+        next(null, `${Date.now()}(${baseName})${extension}`); 
+        console.log(file)
         // console.log(file.originalname)
     }
 

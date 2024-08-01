@@ -8,7 +8,7 @@ const cartRouter = require('./routes/cartRoute');
 const authRouter = require('./routes/authRoute');
 const { isLoggedIn } = require('./validation/authValidator');
 const uploader = require('./middlewares/multerMiddleware');
-const { cloudinary } = require('./config/cloudinaryConfig');
+const cloudinary = require('./config/cloudinaryConfig');
 const fs = require('fs/promises');
 const productRouter = require('./routes/productRoute');
 
