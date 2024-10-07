@@ -15,8 +15,10 @@ async function createProduct(productDetails) {
         try{
             const cloudinaryResponse = await cloudinary.uploader.upload(imagePath);
             var productImage = cloudinaryResponse.secure_url;
-            console.log(__dirname);
-            console.log(process.cwd());
+            // console.log(productImage);
+            
+            // console.log(__dirname);
+            // console.log(process.cwd());
             fs.unlink(process.cwd() + "/" + imagePath);
 
         } catch(error){
@@ -32,7 +34,6 @@ async function createProduct(productDetails) {
         ...productDetails,
         productImage: productImage
     });
-
     return product;
 }
 
