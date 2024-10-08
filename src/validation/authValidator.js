@@ -26,7 +26,7 @@ async function isLoggedIn(req, res, next){
         req.user = {
             email: decoded.email,
             id: decoded.id,
-            role: decoded.userRole
+            role: decoded.role
         }
         // console.log("This is user details",req.user);
         
