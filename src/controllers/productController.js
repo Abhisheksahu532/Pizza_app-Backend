@@ -10,7 +10,8 @@ const AppError = require('../utils/appError');
             imagePath : req.file ?.path,
             price : req.body.price,
             category : req.body.category,
-            inStock : req.body.inStock
+            inStock : req.body.inStock,
+            // quantity : req.body.quantity,
     
         });
         return res.status(201).json({
