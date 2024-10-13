@@ -29,7 +29,7 @@ const orderSchema = new mongoose.Schema({
         required: true
     },
 
-    statue:{
+    status:{
         type: String,
         enum: ['ORDERED', 'DELIVERED', 'CANCELLED', 'OUT_FOR_DELIVERY', 'PROCESSING'],
         default: 'ORDERED'
@@ -40,10 +40,10 @@ const orderSchema = new mongoose.Schema({
         minlength: [10, "Address should be at least 10 characters"],
     },
 
-    payment: {
+    paymentMethod: {
         type: String,
-        enum: ['COD', 'ONLINE'],
-        default: 'COD'
+        enum: ['CASH', 'ONLINE'],
+        default: 'CASH'
     }
 
 },{

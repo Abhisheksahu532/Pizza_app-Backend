@@ -13,8 +13,8 @@ async function createCart(userId){
     } catch(error){
         if(error.name === 'ValidationError'){
 
-            const errorMessageList = Object.keys(error.errors).forEach((property) =>{
-                console.log(property, error.errors[property].message);
+            const errorMessageList = Object.keys(error.errors).map((property) =>{
+                return error.errors[property].message;
             })
             throw new BadRequestError(errorMessageList);
         }

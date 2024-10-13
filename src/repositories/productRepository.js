@@ -9,7 +9,7 @@ async function createProduct(productDetails){
     } catch(error){
         if(error.name === 'ValidationError'){
 
-            const errorMessageList = Object.keys(error.errors).forEach((property) =>{
+            const errorMessageList = Object.keys(error.errors).map((property) =>{
                 console.log(property, error.errors[property].message);
             })
             throw new BadRequestError(errorMessageList);
