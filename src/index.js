@@ -27,6 +27,12 @@ app.use('/auth', authRouter);
 app.use('/products', productRouter); 
 app.use('/orders', orderRouter); 
 
+app.get('/ping', isLoggedIn, (req,res) =>{
+    console.log(req.body);
+    console.log(req.cookies);
+    return res.json({mesaage: "Pong"});
+});
+
 
 app.listen(ServerConfig.PORT, async ()=>{
     await connectDB();
