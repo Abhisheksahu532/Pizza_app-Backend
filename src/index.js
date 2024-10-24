@@ -12,8 +12,14 @@ const cloudinary = require('./config/cloudinaryConfig');
 const fs = require('fs/promises');
 const productRouter = require('./routes/productRoute');
 const orderRouter = require('./routes/orderRoute');
+const cors = require('cors');
 
 const app=express();
+
+app.use(cors({
+    origin: "http://localhost:5173", // allow all origins
+    credentials: true // allow session cookie from browser to passthrough
+}));
 
 app.use(cookieParser());
 app.use(express.json());

@@ -6,6 +6,8 @@ class BadRequestError extends AppError{
 
         let message = '';
         invalidParams.forEach(params => message += `${params}\n `);
+        console.log(message);
+
 
         super(`The request has the following inavlid parameters \n${invalidParams} `, 400);
 
