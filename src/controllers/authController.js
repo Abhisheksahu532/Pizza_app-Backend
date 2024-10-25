@@ -31,7 +31,11 @@ async function login(req,res){
             error: {}
         })
     } catch(error){
-        return res.status(error.statusCode).json({
+        console.error("Error during login:", error);
+        
+        // Fallback to a 400 error if `error.statusCode` doesn't exist
+        const statusCode = error.statusCode || 400;
+        return res.status(statusCode).json({
             success: false,
             data: {},
             message: error.message,
