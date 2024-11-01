@@ -10,14 +10,13 @@ async function createProduct(productDetails){
         if(error.name === 'ValidationError'){
 
             const errorMessageList = Object.keys(error.errors).map((property) =>{
-                console.log(property, error.errors[property].message);
+                return error.errors[property].message;
+
             })
             throw new BadRequestError(errorMessageList);
         }
         console.log(error);
         throw new InternalServerError();
-
-
     }
 }
 

@@ -14,7 +14,7 @@ const userSchema = new mongoose.Schema({
 
     lastName :{
         type : String,
-        required : [true, "Last name is required"],
+        // required : [true, "Last name is required"],
         minlength: [4, "Last name should be at least 4 characters"],
         lowercase : true,
         trim : 20,
@@ -33,7 +33,7 @@ const userSchema = new mongoose.Schema({
     email :{
         type: String,
         trim : true,
-        unique : [true, "Phone number is already used"],
+        // unique : [true, "Phone number is already used"],
         required : [true, "Phone number is reqired"],
         match : [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
     },

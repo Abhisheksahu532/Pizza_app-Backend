@@ -10,7 +10,7 @@ async function createUser(req,res){
 
         return res.status(201).json({
         message: "Succesfully created user",
-        sucess: true,
+        success: true,
         data: response,
         error: {}
         });
