@@ -45,6 +45,14 @@ async function getProductById(productId){
     return response;
 }
 
+async function getAllProductsData(){
+    const response = await ProductRepository.getAllProducts()
+    if(!response){
+        throw new NotFoundError("Product");
+    }
+    return response;
+}
+
 async function deleteProductById(productId){
     const response = await ProductRepository.deleteProductById(productId);
     console.log(response);
@@ -59,5 +67,6 @@ async function deleteProductById(productId){
 module.exports = {
     createProduct,
     getProductById,
-    deleteProductById
+    deleteProductById,
+    getAllProductsData
 };

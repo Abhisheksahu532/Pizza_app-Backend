@@ -1,6 +1,9 @@
 const { loginUser } = require("../services/authService");
 
 async function logout(req, res){
+
+    console.log("Cookie from frontend", req.cookies);
+
     res.cookie("authToken","");
     return res.status(200).json({
         success: true,
@@ -25,9 +28,12 @@ async function login(req,res){
         })
 
         return res.status(200).json({
-            response: true,
+            success: true,
             message: "Logged in successfully",
-            data: {},
+            data: {
+                userRole: response.userRole,
+                userData: response.userData
+            },
             error: {}
         })
     } catch(error){
