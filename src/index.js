@@ -17,7 +17,7 @@ const cors = require('cors');
 const app=express();
 
 app.use(cors({
-    origin: "https://pizzeria-beryl.vercel.app/", // allow all origins
+    origin: ServerConfig.FRONTEND_URL, // allow all origins
     credentials: true // allow session cookie from browser to passthrough
 }));
 
